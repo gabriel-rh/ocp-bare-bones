@@ -1,2 +1,13 @@
 image:
   file: .gitpod.Dockerfile
+  
+tasks:
+  - before: npm install -g http-server
+    init: #npm install
+    command: asciibinder build --distro=openshift-enterprise
+    
+    
+    
+ports:
+  - port: 8000
+    onOpen: open-browser    
